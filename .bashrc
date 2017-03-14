@@ -84,7 +84,7 @@ mtrack()
 mmusic()
 {
 	TEMPDIR="/tmp"
-	MUSICDIR="/home/stephen/store/music"
+	MUSICDIR="~/store/music"
 	file="$TEMPDIR/musicid"
 
 	if [ -e "$file" ]
