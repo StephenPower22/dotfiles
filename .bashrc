@@ -162,5 +162,3 @@ mtasks()
 			;;
 	esac
 }
-
-tmux
