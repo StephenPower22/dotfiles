@@ -68,8 +68,8 @@ mcputemp()
 
 msuspend()
 {
-	#sudo pm-suspend; i3lock -c 005500 
-	sudo pm-suspend; 
+	sudo pm-suspend; i3lock -c 005500 
+	#sudo pm-suspend; 
 }
 
 mtrack()
