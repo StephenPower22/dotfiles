@@ -83,8 +83,8 @@ mtrack()
 
 mmusic()
 {
-	TEMPDIR="/tmp"
-	MUSICDIR="~/store/music"
+	TEMPDIR=/tmp
+	MUSICDIR=~/store/music
 	file="$TEMPDIR/musicid"
 
 	if [ -e "$file" ]
@@ -95,11 +95,11 @@ mmusic()
 	else
 		if [ $# -eq 0 ]
 		then
-			#cvlc --random $MUSICDIR & echo "$!" > $file
-			vlc --random $MUSICDIR & echo "$!" > $file
+			cvlc --random $MUSICDIR & echo "$!" > $file
+			#vlc --random $MUSICDIR & echo "$!" > $file
 		else
-			#cvlc $1 & echo "$!" > $file	
-			vlc $1 & echo "$!" > $file	
+			cvlc $1 & echo "$!" > $file	
+			#vlc $1 & echo "$!" > $file	
 		fi
 	fi
 }
