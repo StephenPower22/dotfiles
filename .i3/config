@@ -22,6 +22,7 @@ exec dropbox start
 exec --no-startup-id gnome-settings-daemon
 #exec nitrogen --restore
 #exec --no-startup-id fluxgui
+exec gnome-terminal
 
 
 set $mod Mod4
