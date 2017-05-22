@@ -27,6 +27,11 @@ mbrowse()
 	$BROWSER --app="http://$1"
 }
 
+mlaunch()
+{
+	eval "$1 & exit"
+}
+
 mopen()
 {
 	file=$(ls -1)
