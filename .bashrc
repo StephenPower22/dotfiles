@@ -27,9 +27,11 @@ mbrowse()
 	$BROWSER --app="http://$1"
 }
 
+
 mlaunch()
 {
-	eval "$1 & exit"
+	read -e -p "Command to run: " cmd
+	eval "nohup $cmd & disown"
 }
 
 mopen()
@@ -100,8 +102,9 @@ mmusic()
 	else
 		if [ $# -eq 0 ]
 		then
-			cvlc --random $MUSICDIR & echo "$!" > $file
+			#cvlc --random $MUSICDIR & echo "$!" > $file
 			#vlc --random $MUSICDIR & echo "$!" > $file
+			nohup vlc --random $MUSICDIR & disown
 		else
 			cvlc $1 & echo "$!" > $file	
 			#vlc $1 & echo "$!" > $file	

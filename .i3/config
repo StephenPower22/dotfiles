@@ -22,6 +22,7 @@ exec dropbox start
 exec --no-startup-id gnome-settings-daemon
 #exec nitrogen --restore
 #exec --no-startup-id fluxgui
+exec cinnamon-sound-applet
 exec gnome-terminal
 
 
@@ -182,10 +183,18 @@ bar {
         #status_command i3status
         status_command mybar
 				colors {
-					statusline  #00ff00 #000000 #000000
-					focused_workspace  #00CC00 #005500 #00ff00
+					#statusline  #00ff00 #000000 #000000
+					#statusline  #ffbf00 #000000 #000000
+					statusline  red #000000 #000000
+					#focused_workspace  #00CC00 #005500 #00ff00
+					#focused_workspace  #ffbf00 #7f5f00 #ffbf00
+					focused_workspace  red #550000 red
 				}
 }
 # class                 border  backgr. text    indicator
-client.focused          #00CC00 #005500 #00ff00 #2e9ef4
-client.background       darkgreen
+#client.focused          #00CC00 #005500 #00ff00 #2e9ef4
+#client.focused          #ffbf00 #7f5f00 #ffbf00 #2e9ef4
+client.focused          red #550000 red #2e9ef4
+client.background       #550000
+#client.background       #7f5f00
+client.background       darkred
