@@ -88,30 +88,6 @@ mtrack()
 	done
 }
 
-mmusic()
-{
-	TEMPDIR=/tmp
-	MUSICDIR=~/store/music
-	file="$TEMPDIR/musicid"
-
-	if [ -e "$file" ]
-	then
-		read -r pid < $file
-		pkill vlc
-		rm $file
-	else
-		if [ $# -eq 0 ]
-		then
-			#cvlc --random $MUSICDIR & echo "$!" > $file
-			#vlc --random $MUSICDIR & echo "$!" > $file
-			nohup vlc --random $MUSICDIR & disown
-		else
-			cvlc $1 & echo "$!" > $file	
-			#vlc $1 & echo "$!" > $file	
-		fi
-	fi
-}
-
 mgp3()
 {
 	xset -dpms
