@@ -17,7 +17,7 @@
 workspace_layout stacking
 exec --no-startup-id xset -dpms
 exec --no-startup-id xset s off
-exec --no-startup-id xsetroot -solid red
+exec --no-startup-id xsetroot -solid orange
 exec --no-startup-id gnome-settings-daemon
 exec --no-startup-id dropbox start
 exec --no-startup-id antimicro --tray
@@ -185,6 +185,7 @@ bindsym $mod+r mode "resize"
 bar {
         #status_command i3status
         status_command mybar
+				tray_output primary
 				colors {
 					#statusline  #00ff00 #000000 #000000
 					#statusline  #ffbf00 #000000 #000000
@@ -194,6 +195,32 @@ bar {
 					focused_workspace  red #550000 red
 				}
 }
+bar {
+        #status_command i3status
+        status_command mnotebar
+				position top
+				workspace_buttons no
+				tray_output none
+				colors {
+					#statusline  #00ff00 #000000 #000000
+					#statusline  #ffbf00 #000000 #000000
+					statusline  red #000000 #000000
+					#focused_workspace  #00CC00 #005500 #00ff00
+					#focused_workspace  #ffbf00 #7f5f00 #ffbf00
+					focused_workspace  red #550000 red
+				}
+}
+
+
+
+
+
+
+
+
+
+
+
 # class                 border  backgr. text    indicator
 #client.focused          #00CC00 #005500 #00ff00 #2e9ef4
 #client.focused          #ffbf00 #7f5f00 #ffbf00 #2e9ef4
