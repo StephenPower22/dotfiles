@@ -33,6 +33,7 @@ set $mod Mod4
 for_window [class="Wine"] floating enable
 for_window [class="dosbox"] floating enable
 for_window [class="EPSXe"] floating enable
+for_window [class="ePSXe"] floating enable
 #for_window [class="Gimp"] floating enable
 
 #*****************
