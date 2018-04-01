@@ -34,6 +34,11 @@ mlaunch()
 	eval "nohup $cmd & disown"
 }
 
+mshutdown()
+{
+	sudo shutdown -h now
+}
+
 mopen()
 {
 	file=$(ls -1)
@@ -86,39 +91,6 @@ mtrack()
 		echo "[$(date)] $($1)"
 		sleep $2
 	done
-}
-
-mgp3()
-{
-	xset -dpms
-	xset s off
-	cd ~/.wine/drive_c/Program\ Files/Microprose/Grand\ Prix\ 3/
-	wine Gp3.exe
-	cd -
-}
-
-mgames()
-{
-
-	echo ""
-	echo "Games:"
-	echo "1) GP3"
-	echo ""
-	read -p "Option: " opt
-	case $opt in
-		1)
-			mgp3
-			;;
-		2)
-			echo "Not yet implemented"
-			;;
-		3)
-			echo "Not yet implemented"
-			;;
-		*)
-			echo "Invalid option!"
-			;;
-	esac
 }
 
 mtasks()
