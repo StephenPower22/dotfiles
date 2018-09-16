@@ -118,4 +118,4 @@ mtasks()
 			;;
 	esac
 }
-tmux
+#tmux

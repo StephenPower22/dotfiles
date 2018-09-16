@@ -4,6 +4,9 @@ set number
 set autoindent
 set background=dark
 set mouse=a
+
+let html_number_lines = 0
+
 "set clipboard=unnamedplus
 set colorcolumn=80
 au FileType python set expandtab ts=4 sw=4
