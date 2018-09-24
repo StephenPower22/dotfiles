@@ -1,3 +1,5 @@
 proj_dir=$(git rev-parse --show-toplevel)
 
-cp -r $proj_dir ~/
+echo "$proj_dir"
+
+cp -r $proj_dir/. ~/ --exclude install.sh
