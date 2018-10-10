@@ -217,8 +217,8 @@ bar {
 # class                   border  backgr. text    indicator
 #client.focused           #00CC00 #005500 #00ff00 #2e9ef4
 #client.focused           #ffbf00 #7f5f00 #ffbf00 #2e9ef4
-client.unfocused          #550000 #000000 #550000 #2e9ef4
-client.focused_inactive   #550000 #550000 #000000 #2e9ef4
+client.unfocused          #AA0000 #000000 #AA0000 #2e9ef4
+client.focused_inactive   #770000 #770000 #000000 #2e9ef4
 client.focused            #FF0000 #550000 #FF0000 #2e9ef4
 client.background         #550000
 #client.background        #7f5f00
