@@ -4,6 +4,7 @@ set number
 set autoindent
 set background=dark
 set mouse=a
+set ignorecase
 
 let html_number_lines = 0
 
