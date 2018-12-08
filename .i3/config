@@ -56,7 +56,8 @@ font -misc-fixed-bold-r-normal--13-120-75-75-C-70-iso10646-1
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal
+#bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Return exec --no-startup-id xterm -fg orange -fn 10x20
 
 # kill focused window
 bindsym $mod+Shift+q kill
