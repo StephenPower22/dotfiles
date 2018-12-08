@@ -26,7 +26,8 @@ exec --no-startup-id setxkbmap
 #exec --no-startup-id fluxgui
 exec --no-startup-id cinnamon-sound-applet
 exec --no-startup-id nm-applet
-exec --no-startup-id gnome-terminal
+#exec --no-startup-id gnome-terminal
+exec --no-startup-id xterm -fg orange -fn 10x20
 
 
 set $mod Mod4
