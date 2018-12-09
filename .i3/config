@@ -27,8 +27,8 @@ exec --no-startup-id setxkbmap
 exec --no-startup-id cinnamon-sound-applet
 exec --no-startup-id nm-applet
 #exec --no-startup-id gnome-terminal
-exec --no-startup-id xterm -fg orange -fn 10x20
-
+#exec --no-startup-id xterm -fg orange -fn 10x20
+exec --no-startup-id xterm -fg orange -fn -xos4-terminus-*-*-*-*-22-*-*-*-*-*-*-*
 
 set $mod Mod4
 
@@ -57,7 +57,8 @@ floating_modifier $mod
 
 # start a terminal
 #bindsym $mod+Return exec gnome-terminal
-bindsym $mod+Return exec --no-startup-id xterm -fg orange -fn 10x20
+#bindsym $mod+Return exec --no-startup-id xterm -fg orange -fn 10x20
+bindsym $mod+Return exec --no-startup-id xterm -fg orange -fn -xos4-terminus-*-*-*-*-22-*-*-*-*-*-*-*
 
 # kill focused window
 bindsym $mod+Shift+q kill
