@@ -30,8 +30,9 @@ mbrowse()
 
 mlaunch()
 {
-	read -e -p "Command to run: " cmd
-	eval "nohup $cmd & disown"
+	#read -e -p "Command to run: " cmd
+	#eval "nohup $cmd & disown"
+	eval "nohup $1 & disown"
 }
 
 mshutdown()
@@ -93,29 +94,14 @@ mtrack()
 	done
 }
 
-mtasks()
-{
-	echo "Options:"
-	echo ""
-	echo "1) Music"
-	echo "2) List files with index"
-	echo "3) Update"
-	echo ""
-	read -p "Enter d'aul option: " opt
-
-	case $opt in
-		"1")
-				mmusic
-				;;
-		"2")
-				mls
-				;;
-		"3")
-				mupdate
-				;;
-		*)
-			echo "Invalid option!"
-			;;
-	esac
+mnote() {
+	notefile=~/notes/notes.txt
+	if [ "x$1" == "x" ]
+	then
+			cat $notefile
+	else
+		date=$(date +"%Y/%m/%d")
+		echo "[$date] $1" >> $notefile
+	fi
 }
 #tmux
