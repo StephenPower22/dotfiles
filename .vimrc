@@ -1,5 +1,5 @@
-set ts=2
-set sw=2
+"set ts=2
+"set sw=2
 set number
 set autoindent
 set background=dark
