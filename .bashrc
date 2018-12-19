@@ -96,12 +96,23 @@ mtrack()
 
 mnote() {
 	notefile=~/notes/notes.txt
-	if [ "x$1" == "x" ]
-	then
-			cat $notefile
-	else
-		date=$(date +"%Y/%m/%d")
-		echo "[$date] $1" >> $notefile
-	fi
+
+	case $1 in
+		"search")
+			grep -in "$2" $notefile
+			;;
+		"edit")
+			vim $notefile
+			;;
+		*)
+			if [ "x$1" == "x" ]
+			then
+					cat $notefile
+			else
+				date=$(date +"%Y/%m/%d")
+				echo "[$date] $1" >> $notefile
+			fi
+			;;
+	esac
 }
 #tmux
