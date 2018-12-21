@@ -104,10 +104,13 @@ mnote() {
 		"edit")
 			vim $notefile
 			;;
+		"todo")
+			vim -c "/TODO" $notefile
+			;;
 		*)
 			if [ "x$1" == "x" ]
 			then
-					cat $notefile
+				cat $notefile
 			else
 				date=$(date +"%Y/%m/%d")
 				echo "[$date] $1" >> $notefile
