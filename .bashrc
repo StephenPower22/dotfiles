@@ -94,7 +94,7 @@ mtrack()
 	done
 }
 
-mnote() {
+mnote() (
 	notefile=~/notes/notes.txt
 
 	case $1 in
@@ -126,6 +126,11 @@ mnote() {
 				fi
 			done
 			;;
+		"p"|"prompt")
+			read -p "Note: " note
+			date=$(date +"%Y/%m/%d")
+			echo "[$date] $note" >> $notefile
+			;;
 		*)
 			if [ "x$1" == "x" ]
 			then
@@ -136,5 +141,5 @@ mnote() {
 			fi
 			;;
 	esac
-}
+)
 #tmux
