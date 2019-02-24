@@ -104,40 +104,22 @@ mnote() (
 		"edit")
 			vim $notefile
 			;;
-		"todo")
-			#vim -c "/TODO" $notefile
-			todos=$(grep "TODO#" $notefile)
-			IFS=$'\n'
-			for i in $todos
-			do
-				echo "$i"
-				read -p "Completed? [y/n]: " completed
-				if [ "$completed" == "Y" ] || [ "$completed" == "y" ]
-				then
-					note=$(echo $i | cut -d "#" -f2)
-					echo "$note"
-					date=$(date +"%Y/%m/%d")
-
-					echo "[$date] DONE#$note" >> $notefile
-
-					tempnotefile=/tmp/tmpnotefile
-					grep -v "\\$i" $notefile > $tempnotefile
-					mv $tempnotefile $notefile
-				fi
-			done
-			;;
 		"p"|"prompt")
 			read -p "Note: " note
-			date=$(date +"%Y/%m/%d")
-			echo "[$date] $note" >> $notefile
+			echo "################################################################################" >> $notefile
+			echo ""
+			echo "$1" >> $notefile
+			echo ""
 			;;
 		*)
 			if [ "x$1" == "x" ]
 			then
 				cat $notefile
 			else
-				date=$(date +"%Y/%m/%d")
-				echo "[$date] $1" >> $notefile
+				echo "################################################################################" >> $notefile
+				echo ""
+				echo "$1" >> $notefile
+				echo ""
 			fi
 			;;
 	esac
