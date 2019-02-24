@@ -96,17 +96,21 @@ mtrack()
 
 mnote() (
 	notefile=~/notes/notes.txt
+	seperator="################################################################################"
 
 	case $1 in
 		"search")
 			grep -in "$2" $notefile
 			;;
-		"edit")
+		"g"|"goto")
+			vim -c "/\c$2" $notefile
+			;;
+		"e"|"edit")
 			vim $notefile
 			;;
 		"p"|"prompt")
 			read -p "Note: " note
-			echo "################################################################################" >> $notefile
+			echo $seperator >> $notefile
 			echo ""
 			echo "$1" >> $notefile
 			echo ""
@@ -116,7 +120,7 @@ mnote() (
 			then
 				cat $notefile
 			else
-				echo "################################################################################" >> $notefile
+				echo $seperator >> $notefile
 				echo ""
 				echo "$1" >> $notefile
 				echo ""
