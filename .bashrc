@@ -94,38 +94,4 @@ mtrack()
 	done
 }
 
-mnote() (
-	notefile=~/notes/notes.txt
-	seperator="################################################################################"
-
-	case $1 in
-		"search")
-			grep -in "$2" $notefile
-			;;
-		"g"|"goto")
-			vim -c "/\c$2" $notefile
-			;;
-		"e"|"edit")
-			vim $notefile
-			;;
-		"p"|"prompt")
-			read -p "Note: " note
-			echo $seperator >> $notefile
-			echo ""
-			echo "$1" >> $notefile
-			echo ""
-			;;
-		*)
-			if [ "x$1" == "x" ]
-			then
-				cat $notefile
-			else
-				echo $seperator >> $notefile
-				echo ""
-				echo "$1" >> $notefile
-				echo ""
-			fi
-			;;
-	esac
-)
 #tmux
