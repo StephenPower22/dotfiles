@@ -20,22 +20,23 @@ exec --no-startup-id xset s off
 exec --no-startup-id xsetroot -solid orange
 #exec --no-startup-id gnome-settings-daemon
 exec --no-startup-id dropbox start
-exec --no-startup-id antimicro --tray
+#exec --no-startup-id antimicro --tray
 exec --no-startup-id setxkbmap
 #exec nitrogen --restore
 #exec --no-startup-id fluxgui
 exec --no-startup-id cinnamon-sound-applet
 exec --no-startup-id nm-applet
+exec --no-startup-id setxkbmap -option "terminate:ctrl_alt_bksp"
 #exec --no-startup-id gnome-terminal
 #exec --no-startup-id xterm -fg orange -fn 10x20
 exec --no-startup-id xterm -fg orange -fn -xos4-terminus-*-*-*-*-22-*-*-*-*-*-*-*
 
 set $mod Mod4
 
-for_window [class="Wine"] floating enable
-for_window [class="dosbox"] floating enable
-for_window [class="EPSXe"] floating enable
-for_window [class="ePSXe"] floating enable
+#for_window [class="Wine"] floating enable
+#for_window [class="dosbox"] floating enable
+#for_window [class="EPSXe"] floating enable
+#for_window [class="ePSXe"] floating enable
 #for_window [class="Gimp"] floating enable
 
 #*****************
@@ -155,7 +156,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # Custom application shortcuts
 bindsym $mod+F2 exec --no-startup-id gvim
 bindsym $mod+F3 exec --no-startup-id firefox
-bindsym $mod+F4 exec --no-startup-id mmusic
+bindsym $mod+F4 exec --no-startup-id ~/bin/mmusic
 bindsym $mod+F5 exec --no-startup-id pactl set-sink-volume 0 -- -5%
 bindsym $mod+F6 exec --no-startup-id pactl set-sink-volume 0 -- +5%
 bindsym $mod+F12 exec i3lock -c FF5500
@@ -191,7 +192,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         #status_command i3status
-        status_command mybar
+        status_command ~/bin/mybar
 				tray_output primary
 				colors {
 					#statusline          #00ff00 #000000 #000000

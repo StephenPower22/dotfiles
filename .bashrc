@@ -35,6 +35,12 @@ mlaunch()
 	eval "nohup $1 & disown"
 }
 
+mlaunchc()
+{
+	$1 &
+	exit
+}
+
 mshutdown()
 {
 	sudo shutdown -h now
